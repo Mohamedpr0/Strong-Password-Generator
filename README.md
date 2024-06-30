@@ -23,8 +23,8 @@
 
 
 Install the required Python packages using pip:
-pip install pyperclip
-Navigate to the directory containing generate_password.py.
+### pip install pyperclip
+Navigate to the directory containing passgen.py.
 
 Run the script:
 
