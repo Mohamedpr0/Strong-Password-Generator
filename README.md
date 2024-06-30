@@ -21,22 +21,15 @@
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
+
 Install the required Python packages using pip:
-bash
-Copy code
-pip install -r requirements.txt
-Running the Script
+pip install pyperclip
 Navigate to the directory containing generate_password.py.
 
 Run the script:
 
-bash
-Copy code
-python generate_password.py
+
+python passgen.py
 The generated password will be displayed on the console and copied to your clipboard automatically.
 
 Customization
