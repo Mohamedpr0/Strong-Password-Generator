@@ -1,5 +1,5 @@
-import pyperclip
-import utils.commands
+from .pyperclip import pyperclip_copy
+from .copyq import copyq_copy
 
 
 class ClipboardDriver:
@@ -9,7 +9,7 @@ class ClipboardDriver:
         """
 
         # Pyperclip (working on Windows)
-        pyperclip.copy(password)
+        pyperclip_copy(password)
 
         # CopyQ (working on Linux)
-        utils.commands.run_command_stdin(["copyq", "copy", "-"], password)
+        copyq_copy(password)
