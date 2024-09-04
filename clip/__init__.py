@@ -7,14 +7,14 @@ from .pbcopy_copy import pbcopy_copy
 
 
 class ClipboardDriver:
-    def copy_password(password):
+    def copy_password(password, verbose=False):
         """
         CROSS-PLATFORM function to copy a string into clipboard.
         """
 
-        pyperclip_copy(password)
-        copyq_copy(password)
-        xclip_copy(password)
-        wlclip_copy(password)
-        powershell_copy(password)
-        pbcopy_copy(password)
+        pyperclip_copy(password, verbose)
+        copyq_copy(password, verbose)
+        xclip_copy(password, verbose)
+        wlclip_copy(password, verbose)
+        powershell_copy(password, verbose)
+        pbcopy_copy(password, verbose)
