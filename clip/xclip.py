@@ -2,4 +2,7 @@ import utils.commands
 
 
 def xclip_copy(string):
-    utils.commands.run_command_stdin(["xclip"], string)
+    try:
+        utils.commands.run_command_stdin(["xclip"], string)
+    except FileNotFoundError:
+        pass  # Xclip not installed
