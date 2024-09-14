@@ -1,20 +1,26 @@
-import random
-import string
-import pyperclip
+import generator
+import clip
 
-def generate_password(length=20):
-    characters = string.ascii_letters + string.digits + string.punctuation
-    password = ''.join(random.choice(characters) for _ in range(length))
-    return password
+import argparse
 
 if __name__ == "__main__":
-    generated_password = generate_password()
-    
-    # Copy the generated password to clipboard
-    pyperclip.copy(generated_password)
-    
-    # Print the generated password
+    parser = argparse.ArgumentParser("passgen.py")
+
+    parser.add_argument("-l", "--length", default=20, required=False,
+                        help="Length pf password", type=int)
+    parser.add_argument("-c", "--charset", default="full", required=False,
+                        choices=["full", "alnum", "letters", "digits"],
+                        help="Character set. Allowed: `full`, `alnum`, `letters`, `digits`")
+    parser.add_argument("-v", "--verbose", action="store_true")
+
+    args = parser.parse_args()
+
+    generated_password = generator.PasswordGenerator.generate_password(
+        args.length, charset=args.charset)
+
     print("Generated Password:", generated_password)
-    
-    # Notify the user
+
+    clip.ClipboardDriver.copy_password(
+        generated_password, verbose=args.verbose)
+
     print("Password copied to clipboard.")
