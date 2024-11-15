@@ -5,6 +5,7 @@
 
 **This Python script generates a secure random password and copies it to the clipboard for immediate use.**
 
+
 ## Features
 
 - Generates a random password of default length 20 characters.
